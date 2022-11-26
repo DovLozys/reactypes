@@ -26,6 +26,16 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*.{ts,tsx}": "eslint",
+    "src/*.{css,scss}": "stylelint",
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier -w -u"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -50,6 +60,8 @@
     "autoprefixer": "^10.4.13",
     "craco-alias": "^3.0.1",
     "cypress": "^11.2.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
     "postcss": "^8.4.19",
     "postcss-extend": "^1.0.5",
     "postcss-import": "^15.0.0",
@@ -57,6 +69,7 @@
     "postcss-preset-env": "^7.8.3",
     "postcss-reporter": "^7.0.5",
     "precss": "^4.0.0",
+    "prettier": "^2.8.0",
     "start-server-and-test": "^1.14.0",
     "stylelint": "^14.15.0",
     "stylelint-config-css-modules": "^4.1.0",
